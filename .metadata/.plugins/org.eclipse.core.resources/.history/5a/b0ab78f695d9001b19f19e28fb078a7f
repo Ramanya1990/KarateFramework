@@ -1,0 +1,27 @@
+package com.api.automation;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner.Builder;
+
+public class DynamicParallelRunnerUsingBuilder {
+	
+	@Test
+	public void RunnerUsingBuilder()
+	{
+		Builder builder=new Builder();
+		builder.path("classpath:com/api/automation");
+		//Using tags running the particular features alone
+		builder.tags("patchRequest");
+		//Results class used to get the value of passed,failed for features and scenarios
+		Results results=builder.parallel(5);
+		System.out.println("Number of features---------->"+results.getFeaturesTotal());
+		System.out.println("Number of scenarios---------->"+results.getScenariosTotal());
+		System.out.println("Number of scenarios---------->"+results.getScenariosPassed());
+		//Assertion is from junit
+		Assertions.assertEquals(0, results.getScenariosFailed());
+	}
+
+}

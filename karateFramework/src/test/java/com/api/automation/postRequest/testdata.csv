@@ -1,0 +1,4 @@
+Status,Method,ContentType,StatusCode
+avaliable,get,application/json,200
+pending,get,application/json,200
+sold,get,application/json,200

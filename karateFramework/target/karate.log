@@ -1,0 +1,125 @@
+21:08:36.843 [main] INFO  com.intuit.karate.Runner - using system property 'karate.env': staging
+21:08:38.588 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+21:08:38.627 [main] DEBUG com.intuit.karate.Suite - waiting for 14 features to complete
+21:08:40.570 [pool-1-thread-1] INFO  com.intuit.karate - karate.env system property was: staging 
+21:08:41.906 [pool-1-thread-1] DEBUG com.intuit.karate - request:
+1 > POST https://api-m.sandbox.paypal.com/v1/oauth2/token
+1 > Authorization: Basic QVFOTzRsb3N2QzV3d242a3R6elBySEpaNHlWSDh1NjlWUWZ4UzQwLVFvODAzaUFPNHYtZFlKWVg1aS1yQkJ2VmY0bDdONjdvMzZrSzlGZWY6RUhZeTlyOWNJMGVuc1BHX1NWS3FoOWFDTWhDT0tlOVJ2NzM1NGZFRGE5NWZVb2QxWVRpMElPU3NIVzBLOHR5OExiVVRiU0liMGZRSGZzT04=
+1 > Content-Type: application/x-www-form-urlencoded; charset=utf-8
+1 > Content-Length: 29
+1 > Host: api-m.sandbox.paypal.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.2)
+1 > Accept-Encoding: gzip,deflate
+grant_type=client_credentials
+
+21:08:44.047 [pool-1-thread-1] DEBUG com.intuit.karate - response time in milliseconds: 2136
+1 < 200
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Server: nginx/1.14.0 (Ubuntu)
+1 < Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+1 < Paypal-Debug-Id: aa1bc0d6be75a
+1 < X-Paypal-Token-Service: IAAS
+1 < Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 < Accept-Ranges: none
+1 < Via: 1.1 varnish, 1.1 varnish
+1 < Edge-Control: max-age=0
+1 < Date: Sat, 03 Jul 2021 15:38:44 GMT
+1 < X-Served-By: cache-sin18049-SIN, cache-bom4734-BOM
+1 < X-Cache: MISS, MISS
+1 < X-Cache-Hits: 0, 0
+1 < X-Timer: S1625326724.973026,VS0,VE848
+1 < Vary: Accept-Encoding
+1 < transfer-encoding: chunked
+{"access_token":"A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ","scope":"https:\/\/uri.paypal.com\/services\/invoicing https:\/\/uri.paypal.com\/services\/vault\/payment-tokens\/read https:\/\/uri.paypal.com\/services\/disputes\/read-buyer https:\/\/uri.paypal.com\/services\/payments\/realtimepayment https:\/\/uri.paypal.com\/services\/disputes\/update-seller https:\/\/uri.paypal.com\/services\/payments\/payment\/authcapture openid https:\/\/uri.paypal.com\/services\/disputes\/read-seller Braintree:Vault https:\/\/uri.paypal.com\/services\/payments\/refund https:\/\/api.paypal.com\/v1\/vault\/credit-card https:\/\/api.paypal.com\/v1\/payments\/.* https:\/\/uri.paypal.com\/payments\/payouts https:\/\/uri.paypal.com\/services\/vault\/payment-tokens\/readwrite https:\/\/api.paypal.com\/v1\/vault\/credit-card\/.* https:\/\/uri.paypal.com\/services\/subscriptions https:\/\/uri.paypal.com\/services\/applications\/webhooks","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2021-07-03T15:38:44Z8RcC98dC_q0Zx3Oi7D2fnpoDwk-l6yPnb3O9yjCYcwc"}
+21:08:44.053 [pool-1-thread-1] INFO  com.intuit.karate - [print] access token----> Bearer A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ 
+21:08:44.219 [pool-1-thread-1] DEBUG com.intuit.karate - request:
+1 > POST https://api-m.sandbox.paypal.com/v2/checkout/orders
+1 > Authorization: Bearer A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 91
+1 > Host: api-m.sandbox.paypal.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.2)
+1 > Accept-Encoding: gzip,deflate
+{"purchase_units":[{"amount":{"value":"100.00","currency_code":"USD"}}],"intent":"CAPTURE"}
+
+21:08:45.821 [pool-1-thread-1] DEBUG com.intuit.karate - response time in milliseconds: 1601
+1 < 201
+1 < Connection: keep-alive
+1 < Content-Length: 501
+1 < Content-Type: application/json
+1 < Server: nginx/1.14.0 (Ubuntu)
+1 < Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+1 < Paypal-Debug-Id: c40fc56862081
+1 < Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 < Accept-Ranges: bytes
+1 < Via: 1.1 varnish, 1.1 varnish
+1 < Edge-Control: max-age=0
+1 < Date: Sat, 03 Jul 2021 15:38:46 GMT
+1 < X-Served-By: cache-sin18046-SIN, cache-bom4748-BOM
+1 < X-Cache: MISS, MISS
+1 < X-Cache-Hits: 0, 0
+1 < X-Timer: S1625326725.370809,VS0,VE1398
+{"links":[{"method":"GET","rel":"self","href":"https:\/\/api.sandbox.paypal.com\/v2\/checkout\/orders\/3B138388RW198081N"},{"method":"GET","rel":"approve","href":"https:\/\/www.sandbox.paypal.com\/checkoutnow?token=3B138388RW198081N"},{"method":"PATCH","rel":"update","href":"https:\/\/api.sandbox.paypal.com\/v2\/checkout\/orders\/3B138388RW198081N"},{"method":"POST","rel":"capture","href":"https:\/\/api.sandbox.paypal.com\/v2\/checkout\/orders\/3B138388RW198081N\/capture"}],"id":"3B138388RW198081N","status":"CREATED"}
+21:08:45.828 [pool-1-thread-1] INFO  com.intuit.karate - [print] orderId---> 3B138388RW198081N 
+21:08:45.836 [pool-1-thread-1] INFO  com.intuit.karate - [print] url---> v2/checkout/orders/3B138388RW198081N 
+21:08:45.865 [pool-1-thread-1] DEBUG com.intuit.karate - request:
+2 > GET https://api-m.sandbox.paypal.com/v2/checkout/orders/3B138388RW198081N
+2 > Authorization: Bearer A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ
+2 > Content-Type: application/json
+2 > Host: api-m.sandbox.paypal.com
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.2)
+2 > Accept-Encoding: gzip,deflate
+
+
+21:11:14.722 [main] INFO  com.intuit.karate.Runner - using system property 'karate.env': preprod
+21:11:16.556 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+21:11:16.646 [main] INFO  com.intuit.karate.Suite - backed up existing 'target\karate-reports' dir to: target\karate-reports_1625326876644
+21:11:16.679 [main] DEBUG com.intuit.karate.Suite - waiting for 14 features to complete
+21:11:18.823 [pool-1-thread-1] INFO  com.intuit.karate - karate.env system property was: preprod 
+21:11:19.646 [pool-1-thread-1] DEBUG com.intuit.karate - request:
+1 > POST https://api-m.sandbox.paypal.com/v1/oauth2/token
+1 > Authorization: Basic QVFOTzRsb3N2QzV3d242a3R6elBySEpaNHlWSDh1NjlWUWZ4UzQwLVFvODAzaUFPNHYtZFlKWVg1aS1yQkJ2VmY0bDdONjdvMzZrSzlGZWY6RUhZeTlyOWNJMGVuc1BHX1NWS3FoOWFDTWhDT0tlOVJ2NzM1NGZFRGE5NWZVb2QxWVRpMElPU3NIVzBLOHR5OExiVVRiU0liMGZRSGZzT04=
+1 > Content-Type: application/x-www-form-urlencoded; charset=utf-8
+1 > Content-Length: 29
+1 > Host: api-m.sandbox.paypal.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.2)
+1 > Accept-Encoding: gzip,deflate
+grant_type=client_credentials
+
+21:11:21.343 [pool-1-thread-1] DEBUG com.intuit.karate - response time in milliseconds: 1683
+1 < 200
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Server: nginx/1.14.0 (Ubuntu)
+1 < Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+1 < Paypal-Debug-Id: da66d1c1291a4
+1 < X-Paypal-Token-Service: IAAS
+1 < Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 < Accept-Ranges: none
+1 < Via: 1.1 varnish, 1.1 varnish
+1 < Edge-Control: max-age=0
+1 < Date: Sat, 03 Jul 2021 15:41:22 GMT
+1 < X-Served-By: cache-sin18025-SIN, cache-bom4721-BOM
+1 < X-Cache: MISS, MISS
+1 < X-Cache-Hits: 0, 0
+1 < X-Timer: S1625326881.346935,VS0,VE828
+1 < Vary: Accept-Encoding
+1 < transfer-encoding: chunked
+{"access_token":"A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ","scope":"https:\/\/uri.paypal.com\/services\/invoicing https:\/\/uri.paypal.com\/services\/vault\/payment-tokens\/read https:\/\/uri.paypal.com\/services\/disputes\/read-buyer https:\/\/uri.paypal.com\/services\/payments\/realtimepayment https:\/\/uri.paypal.com\/services\/disputes\/update-seller https:\/\/uri.paypal.com\/services\/payments\/payment\/authcapture openid https:\/\/uri.paypal.com\/services\/disputes\/read-seller Braintree:Vault https:\/\/uri.paypal.com\/services\/payments\/refund https:\/\/api.paypal.com\/v1\/vault\/credit-card https:\/\/api.paypal.com\/v1\/payments\/.* https:\/\/uri.paypal.com\/payments\/payouts https:\/\/uri.paypal.com\/services\/vault\/payment-tokens\/readwrite https:\/\/api.paypal.com\/v1\/vault\/credit-card\/.* https:\/\/uri.paypal.com\/services\/subscriptions https:\/\/uri.paypal.com\/services\/applications\/webhooks","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32242,"nonce":"2021-07-03T15:38:44Z8RcC98dC_q0Zx3Oi7D2fnpoDwk-l6yPnb3O9yjCYcwc"}
+21:11:21.351 [pool-1-thread-1] INFO  com.intuit.karate - [print] access token----> Bearer A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ 
+21:11:21.447 [pool-1-thread-1] DEBUG com.intuit.karate - request:
+1 > POST https://api-m.sandbox.paypal.com/v2/checkout/orders
+1 > Authorization: Bearer A21AAL8z_JbqKMRrgClFrwqKZOI-uvcfoHBd75KPBE8rOWOWOsGSqXRngjush4Xtlyok8N0HgTooZP9bS_vjWxd--5J8LpJzQ
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 91
+1 > Host: api-m.sandbox.paypal.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/15.0.2)
+1 > Accept-Encoding: gzip,deflate
+{"purchase_units":[{"amount":{"value":"100.00","currency_code":"USD"}}],"intent":"CAPTURE"}
+

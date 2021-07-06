@@ -1,0 +1,21 @@
+package com.api.automation;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner.Builder;
+
+public class DynamicParallelRunnerUsingBuilder {
+	
+	@Test
+	public void RunnerUsingBuilder()
+	{
+		Builder builder=new Builder();
+		builder.path("classpath:com/api/automation");
+		//Using tags running the particular features alone
+		builder.tags("patchRequest");
+		builder.parallel(5);
+	}
+
+}

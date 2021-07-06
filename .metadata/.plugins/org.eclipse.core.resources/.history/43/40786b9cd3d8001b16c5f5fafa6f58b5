@@ -1,0 +1,13 @@
+package com.api.automation.deleteRequest;
+
+import com.intuit.karate.junit5.Karate;
+
+public class deleteRunner {
+	
+	@Test
+	public Karate deleteRunnerForPets()
+	{
+		return Karate.run("").relativeTo(getClass());
+	}
+
+}

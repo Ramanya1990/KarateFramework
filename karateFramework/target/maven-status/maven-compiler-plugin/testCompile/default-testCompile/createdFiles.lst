@@ -1,0 +1,14 @@
+com\api\automation\configuration\TestConfigurationRunner.class
+com\api\automation\DynamicParallelRunnerUsingBuilder.class
+com\api\automation\deleteRequest\deleteRunnerStripe.class
+com\api\automation\postRequest\PostRunner.class
+examples\ExamplesTest.class
+com\api\automation\postRequest\SwaggerRunner.class
+com\api\automation\ParallelRunnerUsingBuilder.class
+com\api\automation\putRequest\putRunner1.class
+com\api\automation\deleteRequest\deleteRunner.class
+com\api\automation\getRequest\TestRunner.class
+com\api\automation\ParrallelRunnerUsingRunner.class
+com\api\automation\DynamicMultipleParallelRunnerBuilder.class
+com\api\automation\patchRequest\PatchRunner.class
+examples\users\UsersRunner.class

@@ -1,0 +1,30 @@
+package com.api.automation;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner.Builder;
+
+public class DynamicParallelRunnerUsingBuilder {
+	
+	@Test
+	public void RunnerUsingBuilder()
+	{
+		Builder builder=new Builder();
+		builder.path("classpath:com/api/automation");
+		//Using tags running the particular features alone
+		builder.tags("patchRequest");
+		builder.parallel(5);
+	}
+	
+	private List<String> tagsFromSystem()
+	{
+		List<String> tagsList=Arrays.asList(System.getProperty("tags","patchRequest"));
+		
+	}
+
+}

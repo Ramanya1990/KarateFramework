@@ -1,0 +1,16 @@
+Feature: Delete the pet in the swagger API
+  
+  Scenario: Delete the pet in the swagger API after creating and Validate it is deleted
+  #Create the pet using post request
+  #Delete the pet using delete keyword and path parameter
+  #Verify the pet id is deleted using get request
+  * def postResponse = call read("../putRequest/CreatePetAPI2.feature"){_url:"https://petstore.swagger.io/v2/pet",_contentType:"application/json",_status:"available"}
+  * def idValue = postResponse.idValue
+  Given url "https://petstore.swagger.io/pet" +idValue
+    And some other precondition
+    When I complete action
+    And some other action
+    And yet another action
+    Then I validate the outcomes
+    And check more outcomes
+ 

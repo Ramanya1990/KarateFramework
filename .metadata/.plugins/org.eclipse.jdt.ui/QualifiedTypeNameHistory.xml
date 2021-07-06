@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.api.automation.postRequest.SwaggerRunner"/>
+    <fullyQualifiedTypeName name="com.intuit.karate.Runner.Builder"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="com.intuit.karate.Runner"/>
+    <fullyQualifiedTypeName name="com.intuit.karate.Results"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
+    <fullyQualifiedTypeName name="com.intuit.karate.junit5.Karate"/>
+    <fullyQualifiedTypeName name="com.intuit.karate.junit5.Karate.Test"/>
+</qualifiedTypeNameHistroy>

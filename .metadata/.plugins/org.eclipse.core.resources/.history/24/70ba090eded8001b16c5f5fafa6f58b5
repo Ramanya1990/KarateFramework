@@ -1,0 +1,16 @@
+Feature: To validate delete Request using Stripe Request
+	Background: 
+	 * def var_authorization = "Bearer sk_test_51ImHzpSAhqr0eqTZyRzLKB1cerahO7m0JHPkDCrVR6cxFTihNZr8TM8U3Cp1uTHpmylzppmmunxGjj7YDZUW38V500x2DZ3mTl"
+	 
+
+  Scenario: To validate the delete Request after creating using post request
+  	* def urlValue = 
+    Given url "https://api.stripe.com"
+    And some other precondition
+    When I complete action
+    And some other action
+    And yet another action
+    Then I validate the outcomes
+    And check more outcomes
+
+  

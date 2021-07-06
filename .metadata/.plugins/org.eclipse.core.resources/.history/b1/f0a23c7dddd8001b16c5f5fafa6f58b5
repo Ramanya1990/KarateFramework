@@ -1,0 +1,14 @@
+Feature: Post Request to create the customer in Stripe API
+  
+
+  @tag1
+  Scenario: Create a customer using post Request using stripe API
+    Given url urlValue
+    And header Authorization = var_authorization
+    And params {"email" : "postrequest@gmail.com",}
+    When I complete action
+    And some other action
+    And yet another action
+    Then I validate the outcomes
+    And check more outcomes
+ 
