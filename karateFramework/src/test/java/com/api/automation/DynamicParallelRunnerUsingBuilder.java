@@ -19,6 +19,7 @@ public class DynamicParallelRunnerUsingBuilder {
 		//Using tags running the particular features alone
 		//sharing tags from system variables
 		builder.tags(tagsFromSystem());
+		builder.outputCucumberJson(true);
 		builder.parallel(5);
 	}
 	//From the Run configuration we are passing the tags and location
